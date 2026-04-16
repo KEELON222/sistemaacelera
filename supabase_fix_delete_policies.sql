@@ -1,5 +1,5 @@
 -- ==============================================================================
--- CORREÇÃO: FK sem CASCADE + políticas de DELETE faltando
+-- CORREÇÃO: FK sem CASCADE/SET NULL + políticas de DELETE faltando
 -- Execute este script no Supabase SQL Editor
 -- ==============================================================================
 
@@ -12,6 +12,32 @@ ALTER TABLE public.financial_entries
 ALTER TABLE public.financial_entries
   ADD CONSTRAINT financial_entries_client_id_fkey
   FOREIGN KEY (client_id) REFERENCES public.clients(id) ON DELETE CASCADE;
+
+-- -----------------------------------------------------------------------
+-- 2. Corrigir FKs que referenciam profiles sem ON DELETE SET NULL
+--    (bloqueiam a exclusão de membros da equipe)
+-- -----------------------------------------------------------------------
+
+-- deals.assigned_to → profiles
+ALTER TABLE public.deals
+  DROP CONSTRAINT IF EXISTS deals_assigned_to_fkey;
+ALTER TABLE public.deals
+  ADD CONSTRAINT deals_assigned_to_fkey
+  FOREIGN KEY (assigned_to) REFERENCES public.profiles(id) ON DELETE SET NULL;
+
+-- projects.assigned_to → profiles
+ALTER TABLE public.projects
+  DROP CONSTRAINT IF EXISTS projects_assigned_to_fkey;
+ALTER TABLE public.projects
+  ADD CONSTRAINT projects_assigned_to_fkey
+  FOREIGN KEY (assigned_to) REFERENCES public.profiles(id) ON DELETE SET NULL;
+
+-- clients.created_by → profiles
+ALTER TABLE public.clients
+  DROP CONSTRAINT IF EXISTS clients_created_by_fkey;
+ALTER TABLE public.clients
+  ADD CONSTRAINT clients_created_by_fkey
+  FOREIGN KEY (created_by) REFERENCES public.profiles(id) ON DELETE SET NULL;
 
 -- -----------------------------------------------------------------------
 -- 2. Políticas de DELETE que estavam faltando
