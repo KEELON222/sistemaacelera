@@ -1,0 +1,88 @@
+{
+  "app_metadata": {
+    "name": "Sistema Acelerai",
+    "version": "1.0.0",
+    "description": "Ecossistema comercial All-in-One focado em Pré-venda, Venda e Pós-venda para clínicas e empresas de serviços. Foco na padronização do arroz com feijão bem feito, interface espelhada para a equipe e gestão de carteira de clientes com relatórios avançados.",
+    "target_audience": "Gestores, Recepcionistas, Financeiro e Equipe de Vendas"
+  },
+  "ui_ux_guidelines": {
+    "style": "Moderno, minimalista, clean e corporativo.",
+    "layout": "Dashboard responsivo com sidebar lateral (menu de navegação principal) e área de conteúdo fluida. Uso de modais e side-sheets para não perder o contexto da página.",
+    "interactions": "Animações suaves (smooth transitions), drag-and-drop para funil de vendas, feedback visual imediato para ações (toasts/snackbars de sucesso ou erro).",
+    "typography": "Sans-serif moderna (ex: Inter, Roboto ou Poppins), legibilidade alta, hierarquia visual clara (títulos em destaque, textos de apoio em cinza médio).",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#10B981",
+      "background": "#F8FAFC",
+      "surface": "#FFFFFF",
+      "text_main": "#1E293B",
+      "text_muted": "#64748B",
+      "borders": "#E2E8F0",
+      "status_success": "#10B981",
+      "status_warning": "#F59E0B",
+      "status_danger": "#EF4444"
+    }
+  },
+  "roles_and_permissions": {
+    "admin": "Acesso total, visão geral de métricas, configurações globais e gestão de usuários.",
+    "reception_sales": "Gestão de pré-venda, cadastro de clientes, agendamentos, chat interno e NPS.",
+    "finance": "Acesso focado no faturamento, cobranças, relatórios financeiros e comissões."
+  },
+  "core_modules": [
+    {
+      "module": "Autenticação e Onboarding",
+      "features": [
+        "Login seguro",
+        "Recuperação de senha",
+        "Redirecionamento baseado na permissão do usuário (Role-Based Access Control)"
+      ]
+    },
+    {
+      "module": "Dashboard e Análise de Métricas (Home)",
+      "features": [
+        "Cards de resumo: Vendas do mês, LTV, Tempo médio de fechamento.",
+        "Gráficos visuais simples (Pizza e Barras) cruzando dados de origem vs conversão.",
+        "Widgets de atalho: Próximos agendamentos, lembretes de cobrança e clientes aguardando follow-up."
+      ]
+    },
+    {
+      "module": "CRM / Gestão de Projetos e Clientes",
+      "features": [
+        "Funil de Vendas (Kanban) com drag-and-drop para atualizar status (ex: Contato, Avaliação, Fechado, Perdido).",
+        "Ficha do Cliente (View Detalhada): Atua como uma 'pasta' contendo dados pessoais, histórico de contatos e timeline da jornada.",
+        "Sistema de Subpastas por Cliente: Upload e gestão de documentos (Ficha de Anamnese digital, Contratos em PDF, Imagens).",
+        "Onboarding Obrigatório: Formulário passo a passo para cadastrar novo cliente (Nome, Telefone, Origem do Lead).",
+        "Integração de Agendamento: Vinculação de eventos simulando Google Calendar e registro de follow-ups (Data, Hora, Responsável)."
+      ]
+    },
+    {
+      "module": "Comunicação Interna",
+      "features": [
+        "Chat no Sistema: Mensageria em tempo real entre os usuários logados.",
+        "Canais/Grupos (ex: #Geral, #Financeiro) e Mensagens Diretas.",
+        "Notificações in-app quando receber nova mensagem ou for marcado em um cliente."
+      ]
+    },
+    {
+      "module": "Financeiro",
+      "features": [
+        "Contas a Receber/Pagar vinculadas aos clientes.",
+        "Sistema de Alertas: Lembretes automáticos de datas a pagar/receber.",
+        "Gestão de Parceiros: Tabela para calcular e registrar comissões baseadas nas vendas concretizadas."
+      ]
+    },
+    {
+      "module": "Pós-Venda e Retenção",
+      "features": [
+        "Automações de Relacionamento: Painel para configurar mensagens automatizadas (Aniversários, Lembretes de Retorno 6 meses, Datas Especiais).",
+        "Módulo NPS (Net Promoter Score): Disparo de pesquisa de satisfação 1 a 10.",
+        "Fluxo Condicional NPS: Notas 9 e 10 exibem link para Avaliação no Google. Notas menores que 8 abrem modal para feedback interno (ouvidoria)."
+      ]
+    }
+  ],
+  "technical_requirements": {
+    "state_management": "Utilizar gerenciamento de estado global para garantir que a 'interface compartilhada' atualize em tempo real para todos os usuários.",
+    "database_structure": "Relacional (SQL) ou NoSQL bem estruturado, com tabelas para Users, Clients, Projects, Files, Invoices, Messages e NPS_Logs.",
+    "file_handling": "Suporte para upload de múltiplos formatos (PDF, JPG, PNG) limitados a 10MB por arquivo."
+  }
+}
