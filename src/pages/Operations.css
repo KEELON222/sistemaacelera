@@ -1,0 +1,54 @@
+.operations-container {
+    height: 100vh;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.kanban-board {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 1rem;
+    height: calc(100vh - 120px);
+}
+
+.kanban-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.kanban-column-content {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gray-medium) transparent;
+}
+
+.kanban-column-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.kanban-column-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.kanban-column-content::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray-medium);
+    border-radius: 10px;
+}
+
+.modal-animate-in {
+    animation: modal-enter 0.2s ease-out forwards;
+}
+
+@keyframes modal-enter {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

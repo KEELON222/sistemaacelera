@@ -1,0 +1,1111 @@
+/* ========== CRM Container ========== */
+.crm-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 72px - 3rem);
+    gap: 1.5rem;
+}
+
+.crm-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.crm-page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.crm-page-subtitle {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin: 4px 0 0 0;
+}
+
+.crm-back-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1.5px solid #e2e8f0;
+    background: white;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.crm-back-btn:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* ========== FUNNEL LIST GRID ========== */
+.funnel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.funnel-card {
+    background: white;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.funnel-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+}
+
+.funnel-card-colors {
+    display: flex;
+    gap: 6px;
+}
+
+.funnel-color-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.funnel-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.funnel-card-info {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.funnel-card-stages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.funnel-stage-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1.5px solid;
+    background: transparent;
+}
+
+/* ========== FUNNEL MINI REPORT ========== */
+.funnel-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
+    padding: 0.625rem 0.75rem;
+    gap: 0.5rem;
+}
+
+.funnel-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 2px;
+}
+
+.funnel-stat-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.funnel-stat-green {
+    color: #10b981;
+}
+
+.funnel-stat-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.funnel-stat-divider {
+    width: 1px;
+    height: 28px;
+    background: #e2e8f0;
+    flex-shrink: 0;
+}
+
+.funnel-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.funnel-progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.funnel-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.funnel-progress-text {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #10b981;
+    white-space: nowrap;
+}
+
+/* ========== LOCKED STAGE (Concluído) ========== */
+.stage-locked {
+    background: #f0fdf4 !important;
+    border-color: #a7f3d0 !important;
+    opacity: 0.9;
+}
+
+.stage-color-preview {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.stage-locked-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #059669;
+}
+
+.stage-locked-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #94a3b8;
+    background: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.funnel-empty {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #f8fafc;
+    border: 2px dashed #e2e8f0;
+    border-radius: 20px;
+}
+
+.funnel-empty-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1rem;
+}
+
+.funnel-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+}
+
+.funnel-empty p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin: 0 0 1.5rem 0;
+    max-width: 320px;
+}
+
+/* ========== KANBAN BOARD ========== */
+.kanban-board {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+}
+
+.kanban-column {
+    min-width: 300px;
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 0.75rem;
+    border: 1px solid #f1f5f9;
+}
+
+.kanban-column-header {
+    background: white;
+    border-radius: 12px;
+    padding: 0.875rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.kanban-col-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+}
+
+.kanban-col-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 8px;
+}
+
+.kanban-col-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.kanban-col-count {
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.kanban-col-total {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+    padding-left: 8px;
+}
+
+.kanban-column-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.kanban-column-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.kanban-column-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* ========== KANBAN CARDS ========== */
+.kanban-card {
+    background: white;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.875rem;
+    cursor: grab;
+    transition: all 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.kanban-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+.kanban-card:active {
+    cursor: grabbing;
+}
+
+.kcard-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.3;
+}
+
+.kcard-client {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.kcard-tasks {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #f8fafc;
+    padding: 3px 8px;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.kcard-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.5rem;
+    margin-top: 2px;
+}
+
+.kcard-value {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.kcard-date {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* ========== SHARED MODAL STYLES (reuse from Clients.css) ========== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 1.5rem;
+    animation: overlayIn 0.2s ease-out;
+}
+
+@keyframes overlayIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-box {
+    background: #ffffff;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    animation: modalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-box-lg {
+    max-width: 950px !important;
+    width: 90vw !important;
+}
+
+.modal-box-xl {
+    max-width: 1200px !important;
+    width: 95vw !important;
+}
+
+/* ========== ENHANCED SUBTASK ITEMS ========== */
+.subtask-item-enhanced {
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subtask-row-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subtask-row-top input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #3b82f6;
+    flex-shrink: 0;
+}
+
+.subtask-title {
+    flex: 1;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.subtask-status-select {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1.5px solid;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.subtask-row-bottom {
+    display: flex;
+    gap: 12px;
+    padding-left: 24px;
+}
+
+.subtask-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #94a3b8;
+}
+
+.subtask-date {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    color: #475569;
+    background: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.subtask-date:focus {
+    border-color: #3b82f6;
+}
+
+.subtask-assign {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    color: #475569;
+    background: white;
+    outline: none;
+    cursor: pointer;
+    max-width: 150px;
+}
+
+.subtask-assign:focus {
+    border-color: #3b82f6;
+}
+
+/* ========== LINKED CLIENT CARD ========== */
+.linked-client-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+    border: 1.5px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-top: 8px;
+    animation: modalIn 0.15s ease-out;
+}
+
+.linked-client-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.linked-client-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.linked-client-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.linked-client-detail {
+    font-size: 0.7rem;
+    color: #64748b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subtask-delete,
+.subtask-action-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    flex-shrink: 0;
+}
+
+.subtask-action-btn {
+    color: #64748b;
+}
+
+.subtask-action-btn:hover {
+    background: #f1f5f9;
+    color: #3b82f6;
+}
+
+.subtask-delete {
+    color: #94a3b8;
+}
+
+.subtask-delete:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+/* Subtask DatePicker Small Variant */
+.picker-small .datepicker-trigger {
+    padding: 3px 6px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    height: 24px;
+    min-width: 100px;
+}
+
+.picker-small .datepicker-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.linked-client-remove {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    flex-shrink: 0;
+}
+
+.linked-client-remove:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+/* ========== FILE UPLOAD ========== */
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+.file-item-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.file-item-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.file-item-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1e293b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-item-size {
+    font-size: 0.65rem;
+    color: #94a3b8;
+}
+
+.file-download-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background: #eff6ff;
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.file-download-btn:hover {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.file-remove-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    flex-shrink: 0;
+}
+
+.file-remove-btn:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.file-upload-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 6px;
+}
+
+.file-upload-trigger:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    background: #eff6ff;
+}
+
+.file-upload-trigger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem 1.75rem;
+    border-bottom: 1px solid #f1f5f9;
+    background: #fafbfc;
+}
+
+.modal-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+}
+
+.modal-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.modal-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.modal-desc {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin: 4px 0 0 0;
+}
+
+.modal-close-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.modal-close-btn:hover {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.modal-body {
+    padding: 1.75rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1.25rem 1.75rem;
+    border-top: 1px solid #f1f5f9;
+    background: #fafbfc;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+}
+
+.modal-col-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-col-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 14px;
+    border: 1px solid #f1f5f9;
+    height: fit-content;
+}
+
+@media (max-width: 600px) {
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== FORM ========== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    flex: 1;
+}
+
+.form-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.form-label .required {
+    color: #ef4444;
+}
+
+.form-input {
+    width: 100%;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: #cbd5e1;
+}
+
+.form-input:hover {
+    border-color: #cbd5e1;
+}
+
+.form-input:focus {
+    border-color: #3b82f6;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 60px;
+    font-family: inherit;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* ========== SUBTASKS ========== */
+.subtask-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.subtask-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8fafc;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+    font-size: 0.85rem;
+}
+
+.subtask-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #3b82f6;
+}
+
+.subtask-delete {
+    border: none;
+    background: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.subtask-delete:hover {
+    color: #ef4444;
+}
+
+.subtask-add {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+/* ========== STAGE EDITOR (Board Creation) ========== */
+.stage-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.stage-editor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid #f1f5f9;
+}
+
+.stage-editor-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.stage-editor-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    min-width: 18px;
+    text-align: center;
+}
+
+.stage-color-picker {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.stage-color-picker input[type="color"] {
+    position: absolute;
+    inset: -8px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.stage-delete-btn {
+    border: none;
+    background: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.15s;
+}
+
+.stage-delete-btn:hover {
+    color: #ef4444;
+    background: #fef2f2;
+}
+
+/* ========== SCROLLBAR ========== */
+.kanban-board::-webkit-scrollbar {
+    height: 6px;
+}
+
+.kanban-board::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.kanban-board::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}

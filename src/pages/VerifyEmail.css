@@ -1,0 +1,53 @@
+.verify-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(var(--background-rgb), 1) 0%, rgba(var(--background-rgb), 0.95) 100%);
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.verify-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.verify-wrapper {
+    width: 100%;
+    max-width: 440px;
+    z-index: 1;
+    position: relative;
+}
+
+.verify-header h1 {
+    color: var(--foreground);
+}
+
+.verify-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+}
+
+html.dark .verify-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+.verify-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

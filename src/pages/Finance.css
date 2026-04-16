@@ -1,0 +1,70 @@
+/* Tabela Financeira */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-base {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table-base th,
+.table-base td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.875rem;
+}
+
+.table-base th {
+    background-color: var(--color-surface-hover);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.table-base tbody tr {
+    transition: background-color var(--transition-fast);
+}
+
+.table-base tbody tr:hover {
+    background-color: var(--color-surface-hover);
+}
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.badge-warning {
+    background-color: #FEF3C7;
+    color: #B45309;
+}
+
+.badge-success {
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+
+.badge-danger {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+.badge-muted {
+    background-color: var(--color-border);
+    color: var(--color-text-muted);
+}
+
+.text-right {
+    text-align: right;
+}

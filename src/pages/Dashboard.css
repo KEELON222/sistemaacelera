@@ -1,0 +1,119 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.text-main {
+    color: var(--color-text-main);
+}
+
+.border-b {
+    border-bottom: 2px solid var(--color-border);
+}
+
+.border {
+    border: 1px solid var(--color-border);
+}
+
+.line-tabs {
+    margin-bottom: -2px;
+    /* Pull down to overlap border */
+}
+
+.tab-item {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab-item:hover {
+    color: var(--color-text-main);
+}
+
+.tab-item.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.modern-card {
+    box-shadow: var(--shadow-sm);
+    border: none;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-5 {
+    padding: 1.25rem;
+}
+
+.kpi-box {
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid>div {
+        grid-column: span 1 !important;
+    }
+}
+
+/* Date Range Picker Premium UI */
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.date-picker-dropdown {
+    animation: dropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: top right;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.date-input-premium {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #F8F9FB;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 0.75rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    color: var(--color-text-main);
+    width: 100%;
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.date-input-premium::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.date-input-premium::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+.date-input-premium:focus {
+    border-color: var(--color-primary);
+    background-color: white;
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+}
