@@ -125,8 +125,12 @@ export function Clients() {
         e.stopPropagation();
         if (window.confirm(`Tem certeza que deseja EXCLUIR o cliente "${client.name}"?\nAVISO: Esta ação é permanente e também excluirá TODOS os negócios, projetos operacionais e informações financeiras associados a este cliente!`)) {
             try {
-                const { error } = await supabase.from('clients').delete().eq('id', client.id);
+                const { error, count } = await supabase.from('clients').delete({ count: 'exact' }).eq('id', client.id);
                 if (error) throw error;
+                if (count === 0) {
+                    alert('Não foi possível excluir o cliente. Verifique se você tem permissão para realizar esta ação.');
+                    return;
+                }
                 fetchClients();
             } catch (err) {
                 console.error('Erro ao excluir cliente:', err);
